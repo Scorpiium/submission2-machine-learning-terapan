@@ -312,26 +312,26 @@ Model yang digunakan:
 
 ### Hasil Modeling:
 ![rmse](images/rmse.png)  
-Epoch 1/10
-loss: 0.6587 - root_mean_squared_error: 0.2534 - val_loss: 0.6204 - val_root_mean_squared_error: 0.2147
-Epoch 2/10
-loss: 0.6163 - root_mean_squared_error: 0.2121 - val_loss: 0.6220 - val_root_mean_squared_error: 0.2160
-Epoch 3/10
-loss: 0.6108 - root_mean_squared_error: 0.2053 - val_loss: 0.6129 - val_root_mean_squared_error: 0.2065
-Epoch 4/10
-loss: 0.6083 - root_mean_squared_error: 0.2034 - val_loss: 0.6116 - val_root_mean_squared_error: 0.2051
-Epoch 5/10
-loss: 0.6075 - root_mean_squared_error: 0.2013 - val_loss: 0.6136 - val_root_mean_squared_error: 0.2072
-Epoch 6/10
-loss: 0.6074 - root_mean_squared_error: 0.2014 - val_loss: 0.6101 - val_root_mean_squared_error: 0.2032
-Epoch 7/10
-loss: 0.6055 - root_mean_squared_error: 0.1986 - val_loss: 0.6129 - val_root_mean_squared_error: 0.2062
-Epoch 8/10
-loss: 0.6058 - root_mean_squared_error: 0.1992 - val_loss: 0.6109 - val_root_mean_squared_error: 0.2039
-Epoch 9/10
-loss: 0.6050 - root_mean_squared_error: 0.1976 - val_loss: 0.6099 - val_root_mean_squared_error: 0.2027
-Epoch 10/10
-loss: 0.6057 - root_mean_squared_error: 0.1976 - val_loss: 0.6099 - val_root_mean_squared_error: 0.2024
+Epoch 1/10  
+loss: 0.6587 - root_mean_squared_error: 0.2534 - val_loss: 0.6204 - val_root_mean_squared_error: 0.2147  
+Epoch 2/10  
+loss: 0.6163 - root_mean_squared_error: 0.2121 - val_loss: 0.6220 - val_root_mean_squared_error: 0.2160  
+Epoch 3/10  
+loss: 0.6108 - root_mean_squared_error: 0.2053 - val_loss: 0.6129 - val_root_mean_squared_error: 0.2065  
+Epoch 4/10  
+loss: 0.6083 - root_mean_squared_error: 0.2034 - val_loss: 0.6116 - val_root_mean_squared_error: 0.2051  
+Epoch 5/10  
+loss: 0.6075 - root_mean_squared_error: 0.2013 - val_loss: 0.6136 - val_root_mean_squared_error: 0.2072  
+Epoch 6/10  
+loss: 0.6074 - root_mean_squared_error: 0.2014 - val_loss: 0.6101 - val_root_mean_squared_error: 0.2032  
+Epoch 7/10  
+loss: 0.6055 - root_mean_squared_error: 0.1986 - val_loss: 0.6129 - val_root_mean_squared_error: 0.2062  
+Epoch 8/10  
+loss: 0.6058 - root_mean_squared_error: 0.1992 - val_loss: 0.6109 - val_root_mean_squared_error: 0.2039  
+Epoch 9/10  
+loss: 0.6050 - root_mean_squared_error: 0.1976 - val_loss: 0.6099 - val_root_mean_squared_error: 0.2027  
+Epoch 10/10  
+loss: 0.6057 - root_mean_squared_error: 0.1976 - val_loss: 0.6099 - val_root_mean_squared_error: 0.2024  
 
 ### Kelebihan Model:
 - Menangkap pola dari komunitas, rekomendasi didasarkan pada kesamaan antar pengguna atau pola rating.
