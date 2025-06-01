@@ -312,10 +312,10 @@ Rekomendasi yang diberikan untuk film "Your Name. (2016)" menunjukkan film-film 
 2. RMSE: Root Mean Squared Error
 
 Rumus Metrik:
-$$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }$$
-    - $$y_i$$ = Nilai Aktual
-    - $$\hat{y}_i$$ = Nilai Prediksi
-    - $$n$$ = Jumlah Data 
+$$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }$$  
+    - $$y_i$$ = Nilai Aktual  
+    - $$\hat{y}_i$$ = Nilai Prediksi  
+    - $$n$$ = Jumlah Data  
 
 Hasil Evaluasi:
 - `0.1976` pada data training.
