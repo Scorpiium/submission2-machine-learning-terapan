@@ -260,9 +260,9 @@ Model yang digunakan:
 	```
     Model `RecommenderNet` merupakan implementasi collaborative filtering berbasis neural network dengan pendekatan embedding. Di dalamnya, setiap pengguna dan film direpresentasikan dalam bentuk vektor berdimensi tetap `embedding_size` yang dipelajari selama proses pelatihan.
     
-    Model terdiri dari dua pasang layer embedding:
-        - `user_embedding` dan `user_bias` untuk pengguna.
-        - `movies_embedding` dan `movies_bias` untuk film.
+    Model terdiri dari dua pasang layer embedding:  
+        - `user_embedding` dan `user_bias` untuk pengguna.  
+        - `movies_embedding` dan `movies_bias` untuk film.  
         
     Vektor embedding pengguna dan film digabung menggunakan operasi dot product `tf.tensordot` untuk menangkap interaksi antar-entitas. Nilai bias ditambahkan sebagai koreksi, dan hasil akhir diproses melalui fungsi aktivasi sigmoid untuk mengeluarkan skor prediksi antara 0 hingga 1 (karena rating telah dinormalisasi).
     
