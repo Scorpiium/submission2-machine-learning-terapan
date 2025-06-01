@@ -6,7 +6,7 @@
 Dalam beberapa tahun terakhir, jumlah konten digital yang tersedia secara daring meningkat secara eksponensial, khususnya dalam industri hiburan seperti film dan serial televisi. Kondisi ini mendorong kebutuhan akan sistem rekomendasi yang cerdas untuk membantu pengguna menemukan konten yang sesuai dengan preferensi mereka. Kedua pendekatan yang populer dalam membangun sistem rekomendasi adalah Content-Based Filtering dan Collaborative Filtering. Content-Based Filtering merekomendasikan item berdasarkan kemiripan fitur dengan item lain, sedangkan pendekatan Collaborative Filtering, khususnya yang berbasis matrix factorization dan embedding neural network, telah terbukti efektif dalam menangkap pola perilaku pengguna yang kompleks (Koren et al., 2009). Dengan memanfaatkan interaksi pengguna sebelumnya dalam bentuk rating, sistem dapat memprediksi preferensi pengguna terhadap item yang belum pernah mereka lihat.
 
 **Referensi:**
-- Koren, Y., Bell, R., & Volinsky, C. (2009). Matrix Factorization Techniques for Recommender Systems. IEEE Computer, 42(8), 30–37.
+- Koren, Y., Bell, R., & Volinsky, C. (2009). *Matrix Factorization Techniques for Recommender Systems*. IEEE Computer, 42(8), 30–37.
 
 ##  Business Understanding
 
