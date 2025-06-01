@@ -86,6 +86,8 @@ Sebelumnya pada Univariate Data Exploration, diketahui ada sampel kecil dari fil
 
 Dalam pengecekan, ditemukan beberapa judul yang tidak memiliki masukan genre, sebagai contoh, `Green Room (2015)` dan `Pirates of the Caribbean: Dead Men Tell No Tales (2017)`. Hal berikut disayangkan, namun dikarenakan jumlah judul yang insignifikan dibandingkan dengan keseluruhan, maka akan dilakukan penghapusan saja.
 
+Selain itu, genre adalah fitur penting dalam sistem rekomendasi, digunakan sebagai fitur utama dalam model berbasis konten seperti TF-IDF vectorization. Data tanpa genre berarti tidak bisa diwakili dalam ruang fitur, dan akan menyebabkan masalah dalam vektorisasi atau prediksi model.
+
 Setelah proses penghapusan, terjadi pengurangan baris dalam dataframe `all_movies_name` dari 100836 menjadi 100789 atau pengurangan sebesar <1%.
 
 - Normalisasi Teks
