@@ -209,7 +209,7 @@ Model yang digunakan:
     return pd.DataFrame(closest).merge(items).head(k)
     ```
     - Mengambil skor kemiripan dari film tersebut ke semua film lain.
-    - Memilih `k` film yang paling mirip (dengan skor cosine similarity tertinggi).
+    - Memilih `k`, disini 5, film yang paling mirip (dengan skor cosine similarity tertinggi).
     - Menyaring hasil agar tidak merekomendasikan film itu sendiri.
     - Mengembalikan daftar film beserta genre-nya sebagai rekomendasi.
     
