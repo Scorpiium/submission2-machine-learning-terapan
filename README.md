@@ -312,6 +312,7 @@ Model yang digunakan:
 
 ### Hasil Modeling:
 ![rmse](images/rmse.png)  
+
 Epoch 1/10  
 loss: 0.6587 - root_mean_squared_error: 0.2534 - val_loss: 0.6204 - val_root_mean_squared_error: 0.2147  
 Epoch 2/10  
