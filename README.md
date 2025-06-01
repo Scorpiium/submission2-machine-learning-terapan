@@ -63,10 +63,10 @@ Dilakukan setelah join dataset `movies` dan `ratings`. Dari 100836 baris dan 6 k
 
 - Exploratory Data Analysis
      - Distribusi Genre Film
-	![genre](images/eda_univariate.png)  
+	![genre](images/eda_genre.png)  
 	Berdasarkan persebaran plot genre film dalam dataset movies, dapat disimpulkan bahwa Film dengan genre `Drama` dan `Comedy` paling umum, mungkin menunjukkan minat pengguna yang tinggi.
      - Distribusi Rating Film
-	![rating](images/eda_multi.png)  
+	![rating](images/eda_rating.png)  
 	Berdasarkan persebaran plot rating film dalam dataset `ratings`. Sebagian besar rating berada diantara `3.0` dan `4.0`, dengan rating `5.0` setelahnya. Hal ini menunjukkan pengguna yang cenderung memiliki opini positif terhadap film yang mereka tonton.
 
 ### Data Preparation
