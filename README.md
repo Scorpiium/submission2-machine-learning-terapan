@@ -18,7 +18,7 @@ Dalam beberapa tahun terakhir, jumlah konten digital yang tersedia secara daring
 ### Goals: 
 - Memprediksi dan merekomendasikan film yang relevan bagi pengguna berdasarkan data historis rating dan metadata film.
 - Menyediakan dua pendekatan berbeda yang dapat dibandingkan dan saling melengkapi: berbasis konten dan berbasis kolaborasi.
-- Memberikan hasil rekomendasi yang dapat diukur tingkat keakuratannya secara kualitatif dan kuantitatif
+- Memberikan hasil rekomendasi yang dapat diukur tingkat keakuratannya secara kualitatif dan kuantitatif.
 
 ### Solution Statement:  
 - Membuat model Content-Based Filtering, menggunakan TF-IDF dan Cosine Linearity, memanfaatkan fitur seperti genre.
