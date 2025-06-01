@@ -155,7 +155,7 @@ print(x, y)
 ```
 Membagi dataset dibagi menjadi dua bagian: 80% untuk pelatihan (x_train, y_train) dan 20% untuk validasi (x_val, y_val) untuk menguji performa model pada data yang belum terlihat.
 
-## Modeling
+## Modeling and Results
 Model yang digunakan:
 1. Content-Based Filtering :
 	```
@@ -212,6 +212,22 @@ Model yang digunakan:
     - Memilih `k`, disini 5, film yang paling mirip (dengan skor cosine similarity tertinggi).
     - Menyaring hasil agar tidak merekomendasikan film itu sendiri.
     - Mengembalikan daftar film beserta genre-nya sebagai rekomendasi.
+  
+### Hasil Prediksi:
+#### Target
+| No | Movie Title       | Genres                          | 
+|----|-------------------|---------------------------------|
+| 1  | Your Name. (2016) | animation drama fantasy romance |
+
+#### Prediksi
+| No | Movie Title                                             | Genres                  | 
+|----|---------------------------------------------------------|-------------------------|
+| 1  | Tale of Princess Kaguya, The (Kaguyahime no monogatari) | animation drama fantasy |
+| 2  | Waking Life (2001)                              	       | animation drama fantasy |
+| 3  | Belladonna of Sadness (1973)                            | animation drama fantasy |
+| 4  | Idiots and Angels (2008)                                | animation drama fantasy |
+| 5  | Angel's Egg (Tenshi no tamago) (1985)                   | animation drama fantasy |
+
     
 ### Kelebihan Model:
 - Tidak bergantung pada data pengguna lain, dapat memberikan rekomendasi meskipun hanya ada satu pengguna.
