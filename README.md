@@ -390,7 +390,7 @@ Showing recommendations for users: 438
 
 ## Evaluasi Model
 Metrik yang digunakan:  
-1. Relevansi Rekomendasi
+1. Relevansi Rekomendasi  
 Evaluasi ini dilakukan dengan mengamati langsung relevansi dan kesesuaian film-film yang direkomendasikan, baik terhadap film input (untuk Content-Based Filtering), maupun terhadap histori pengguna (untuk Collaborative Filtering). Evaluasi ini bermanfaat untuk menilai apakah rekomendasi masuk akal secara semantik (misalnya genre, tema, suasana) dan mengidentifikasi kecocokan kontekstual, misalnya merekomendasikan film klasik untuk penonton film klasik meskipun genre berbeda.
 
 - Untuk model `Content-Based Filtering`, rekomendasi yang diberikan untuk film "Your Name. (2016)" menunjukkan film-film yang memiliki genre serupa, `animation`, `drama`, dan `fantasy`, menunjukkan model dapat memberikan rekomendasi film yang cukup akurat.
