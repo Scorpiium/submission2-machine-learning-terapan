@@ -209,7 +209,7 @@ Model yang digunakan:
  
     cosine_sim_df.sample(5, axis=1).sample(10, axis=0)
     ```
-    Cosine Similarity dilakukan untuk mengukur korelasi antara `movie_title` dalam skala [0,1], semakin mendekati 1, semakin kuat korelasinya.
+    Cosine Similarity memanggil dari `tfidf_matrix` mengukur korelasi antara `movie_title` dalam skala [0,1], semakin mendekati 1, semakin kuat korelasinya.
     
     ```
     def movie_recommendations(judul_film, similarity_data=cosine_sim_df, items=data[['movie_title', 'genres']], k=5):
