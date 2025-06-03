@@ -333,25 +333,25 @@ Model yang digunakan:
 ![rmse](images/rmse.png)  
 
 Epoch 1/10  
-loss: 0.6587 - root_mean_squared_error: 0.2534 - val_loss: 0.6204 - val_root_mean_squared_error: 0.2147  
+loss: 0.6600 - root_mean_squared_error: 0.2553 - val_loss: 0.6207 - val_root_mean_squared_error: 0.2151  
 Epoch 2/10  
-loss: 0.6163 - root_mean_squared_error: 0.2121 - val_loss: 0.6220 - val_root_mean_squared_error: 0.2160  
+loss: 0.6167 - root_mean_squared_error: 0.2123 - val_loss: 0.6192 - val_root_mean_squared_error: 0.2131  
 Epoch 3/10  
-loss: 0.6108 - root_mean_squared_error: 0.2053 - val_loss: 0.6129 - val_root_mean_squared_error: 0.2065  
+loss: 0.6090 - root_mean_squared_error: 0.2047 - val_loss: 0.6134 - val_root_mean_squared_error: 0.2070  
 Epoch 4/10  
-loss: 0.6083 - root_mean_squared_error: 0.2034 - val_loss: 0.6116 - val_root_mean_squared_error: 0.2051  
+loss: 0.6072 - root_mean_squared_error: 0.2008 - val_loss: 0.6129 - val_root_mean_squared_error: 0.2065  
 Epoch 5/10  
-loss: 0.6075 - root_mean_squared_error: 0.2013 - val_loss: 0.6136 - val_root_mean_squared_error: 0.2072  
+loss: 0.6082 - root_mean_squared_error: 0.2018 - val_loss: 0.6128 - val_root_mean_squared_error: 0.2064  
 Epoch 6/10  
-loss: 0.6074 - root_mean_squared_error: 0.2014 - val_loss: 0.6101 - val_root_mean_squared_error: 0.2032  
+loss: 0.6076 - root_mean_squared_error: 0.2009 - val_loss: 0.6109 - val_root_mean_squared_error: 0.2042  
 Epoch 7/10  
-loss: 0.6055 - root_mean_squared_error: 0.1986 - val_loss: 0.6129 - val_root_mean_squared_error: 0.2062  
+loss: 0.6043 - root_mean_squared_error: 0.1975 - val_loss: 0.6105 - val_root_mean_squared_error: 0.2036  
 Epoch 8/10  
-loss: 0.6058 - root_mean_squared_error: 0.1992 - val_loss: 0.6109 - val_root_mean_squared_error: 0.2039  
+loss: 0.6050 - root_mean_squared_error: 0.1987 - val_loss: 0.6146 - val_root_mean_squared_error: 0.2080  
 Epoch 9/10  
-loss: 0.6050 - root_mean_squared_error: 0.1976 - val_loss: 0.6099 - val_root_mean_squared_error: 0.2027  
+loss: 0.6058 - root_mean_squared_error: 0.1994 - val_loss: 0.6116 - val_root_mean_squared_error: 0.2046  
 Epoch 10/10  
-loss: 0.6057 - root_mean_squared_error: 0.1976 - val_loss: 0.6099 - val_root_mean_squared_error: 0.2024  
+loss: 0.6036 - root_mean_squared_error: 0.1965 - val_loss: 0.6115 - val_root_mean_squared_error: 0.2041  
 
 - Top-N Recommendation  
 Showing recommendations for users: 438
