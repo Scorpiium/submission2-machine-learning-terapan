@@ -454,6 +454,15 @@ evaluate_cbf_model(
     n_users=100
 )
 ```
+- Mengambil n_users secara acak dari dataset.
+- Untuk setiap user:
+  - Filter film yang ia beri rating ≥ 3.5 sebagai item relevan.
+  - Memilih salah satu film relevan sebagai input (seed).
+  - Mengambil rekomendasi mirip (top-K) berdasarkan seed tersebut.
+  - Hitung Precision@K dan Recall@K antara rekomendasi dan seluruh film relevan user.
+- Menyimpan nilai precision dan recall ke dalam list.
+- Menghitung rata-rata precision dan recall dari semua pengguna.
+
 Rumus Metrik:  
 - $$\text{Precision@K} = \frac{\text{Jumlah film relevan yang berhasil direkomendasikan}}{\text{Total jumlah film yang direkomendasikan}}$$  
 - $$\text{Recall@K} = \frac{\text{Jumlah film relevan yang berhasil direkomendasikan}}{\text{Total jumlah film relevan (ground truth)}}$$  
