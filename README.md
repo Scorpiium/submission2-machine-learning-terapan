@@ -227,9 +227,9 @@ Model yang digunakan:
     - Mengembalikan daftar film beserta genre-nya sebagai rekomendasi.
   
 ### Hasil Modeling:
-- Precision dan Recall  
-Precision@5: 0.0424 (4.24%)
-Recall@5: 0.0028 (0.28%)
+- Precision & Recall
+  - `Precision@5`: 0.0424 (4.24%)
+  - `Recall@5`: 0.0028 (0.28%)
 
 - Kualitatif Relevansi
 #### Target
