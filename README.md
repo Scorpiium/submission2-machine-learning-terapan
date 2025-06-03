@@ -227,6 +227,11 @@ Model yang digunakan:
     - Mengembalikan daftar film beserta genre-nya sebagai rekomendasi.
   
 ### Hasil Modeling:
+- Precision dan Recall  
+Precision@5: 0.0424 (4.24%)
+Recall@5: 0.0028 (0.28%)
+
+- Kualitatif Relevansi
 #### Target
 | No | Movie Title       | Genres                          | 
 |----|-------------------|---------------------------------|
@@ -349,6 +354,30 @@ Epoch 10/10
 loss: 0.6057 - root_mean_squared_error: 0.1976 - val_loss: 0.6099 - val_root_mean_squared_error: 0.2024  
 
 - Top-N Recommendation  
+Showing recommendations for users: 438
+#### Movies with high ratings from user 
+| No | Movie Title                               | Genres                  |
+|----| ------------------------------------------|-------------------------|
+| 1  | Heat (1995)                               | action crime thriller   |
+| 2  | Star Wars: Episode IV - A New Hope (1977) | action adventure sci_fi |
+| 3  | Shawshank Redemption, The (1994)          | crime drama             |
+| 4  | 300 (2007)                                | action fantasy war imax |
+| 5  | Aristocrats, The (2005)                   | comedy documentary      |
+
+#### Top 10 Film Recommendation
+| No | Movie Title                                                     | Genres                                 |
+|----|-----------------------------------------------------------------|----------------------------------------|
+| 1  | Usual Suspects, The (1995)                                      | crime mystery thriller                 |
+| 2  | Rear Window (1954)                                              | mystery thriller                       |
+| 3  | Amadeus (1984)                                                  | drama                                  |
+| 4  | Graduate, The (1967)                                            | comedy drama romance                   |
+| 5  | Chinatown (1974)                                                | crime film_noir mystery thriller       |
+| 6  | City of Lost Children, The (Cité des enfants perdus, La) (1995) | adventure drama fantasy mystery sci_fi |
+| 7  | Boot, Das (Boat, The) (1981)                                    | action drama war                       |
+| 8  | Lawrence of Arabia (1962)                                       | adventure drama war                    |
+| 9  | Glory (1989)                                                    | drama war                              |
+| 10 | Manhattan (1979)                                                | comedy drama romance                   |
+
 
 ### Kelebihan Model:
 - Menangkap pola dari komunitas, rekomendasi didasarkan pada kesamaan antar pengguna atau pola rating.
@@ -365,7 +394,10 @@ Metrik yang digunakan:
 Untuk model `Content-Based Filtering`, evaluasi dilakukan secara kualitatif dengan melihat relevansi rekomendasi:
 Rekomendasi yang diberikan untuk film "Your Name. (2016)" menunjukkan film-film yang memiliki genre serupa, `animation`, `drama`, dan `fantasy`, menunjukkan model dapat memberikan rekomendasi film yang cukup akurat.
 
-2. RMSE: Root Mean Squared Error
+2. Precision & Recall
+
+
+3. RMSE: Root Mean Squared Error
 
 Rumus Metrik:
 $$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }$$  
