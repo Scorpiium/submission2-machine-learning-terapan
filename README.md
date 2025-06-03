@@ -23,7 +23,7 @@ Dalam beberapa tahun terakhir, jumlah konten digital yang tersedia secara daring
 ### Solution Statement:  
 - Membuat model Content-Based Filtering, menggunakan TF-IDF dan Cosine Linearity, memanfaatkan fitur seperti genre.
 - Membuat model berdasarkan Collaborative Filtering, menggunakan Neural Network RecommenderNet.
-- Menggunakan metrik evaluasi RMSE (Root Mean Squared Error) dan relevansi rekomendasi untuk mengukur performa model.
+- Menggunakan metrik evaluasi RMSE (Root Mean Squared Error), Precision, Recall, dan relevansi kualitatif rekomendasi untuk mengukur performa model.
       
 ## Data Understanding
 
