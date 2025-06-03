@@ -398,7 +398,62 @@ Evaluasi ini dilakukan dengan mengamati langsung relevansi dan kesesuaian film-f
 - Untuk model `Collaborative Filtering`, rekomendasi yang diberikan untuk pengguna dengan histori rating tinggi untuk film seperti "Heat (1995)", "Star Wars: Episode IV - A New Hope (1977)", dan "The Shawshank Redemption (1994)" menunjukkan bahwa sistem merekomendasikan film-film yang memiliki tema atau gaya naratif serupa, mengandung unsur `crime`, `thriller`, dan `mystery`, menunjukkan bahwa model dapat menangkap pola preferensi pengguna dan memberikan rekomendasi yang relevan berdasarkan pola perilaku pengguna lain dengan selera serupa.
 
 2. Precision & Recall
+```
+def precision_at_k(recommended, relevant, k):
+    recommended_k = recommended[:k]
+    relevant_set = set(relevant)
+    hit_count = sum(1 for item in recommended_k if item in relevant_set)
+    return hit_count / k if k else 0
 
+def recall_at_k(recommended, relevant, k):
+    recommended_k = recommended[:k]
+    relevant_set = set(relevant)
+    hit_count = sum(1 for item in recommended_k if item in relevant_set)
+    return hit_count / len(relevant_set) if relevant_set else 0
+
+def evaluate_cbf_model(ratings_df, cosine_sim_df, data_df, k=5, n_users=100):
+    users = ratings_df['userId'].unique()
+    sampled_users = np.random.choice(users, size=n_users, replace=False)
+
+    precisions, recalls = [], []
+
+    for user in sampled_users:
+        user_ratings = ratings_df[(ratings_df['userId'] == user) & (ratings_df['rating'] >= 3.5)]
+        relevant_items = user_ratings['movieId'].tolist()
+
+        if not relevant_items:
+            continue
+
+        seed_movie_id = user_ratings.sample(1)['movieId'].iloc[0]
+        seed_movie_title = data_df[data_df['id'] == seed_movie_id]['movie_title'].values
+
+        if len(seed_movie_title) == 0 or seed_movie_title[0] not in cosine_sim_df.columns:
+            continue
+
+        seed_title = seed_movie_title[0]
+
+        recommended_df = movie_recommendations(seed_title, k=k)
+        recommended_ids = data_df[data_df['movie_title'].isin(recommended_df['movie_title'])]['id'].tolist()
+
+        p = precision_at_k(recommended_ids, relevant_items, k)
+        r = recall_at_k(recommended_ids, relevant_items, k)
+        precisions.append(p)
+        recalls.append(r)
+
+    mean_p = np.mean(precisions)
+    mean_r = np.mean(recalls)
+
+    print(f'Precision@{k}: {mean_p:.4f}')
+    print(f'Recall@{k}: {mean_r:.4f}')
+
+evaluate_cbf_model(
+    ratings_df=ratings,
+    cosine_sim_df=cosine_sim_df,
+    data_df=data,
+    k=5,
+    n_users=100
+)
+```
 Rumus Metrik:  
 - $$\text{Precision@K} = \frac{\text{Jumlah film relevan yang berhasil direkomendasikan}}{\text{Total jumlah film yang direkomendasikan}}$$  
 - $$\text{Recall@K} = \frac{\text{Jumlah film relevan yang berhasil direkomendasikan}}{\text{Total jumlah film relevan (ground truth)}}$$  
