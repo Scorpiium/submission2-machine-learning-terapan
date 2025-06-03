@@ -349,28 +349,28 @@ Epoch 10/10
 loss: 0.6057 - root_mean_squared_error: 0.1976 - val_loss: 0.6099 - val_root_mean_squared_error: 0.2024  
 
 - Top-N Reccomendation  
-Showing recommendations for users: 476
-===========================
-Movies with high ratings from user
---------------------------------
-Forrest Gump (1994) : comedy drama romance war
-Shawshank Redemption, The (1994) : crime drama
-Beauty and the Beast (1991) : animation children fantasy musical romance imax
-Little Women (1994) : drama
-Terminator 2: Judgment Day (1991) : action sci_fi
---------------------------------
-Top 10 Film Recommendation
---------------------------------
-Usual Suspects, The (1995) : crime mystery thriller
-Star Wars: Episode V - The Empire Strikes Back (1980) : action adventure sci_fi
-Apocalypse Now (1979) : action drama war
-Goodfellas (1990) : crime drama
-Fight Club (1999) : action crime drama thriller
-Rear Window (1954) : mystery thriller
-North by Northwest (1959) : action adventure mystery romance thriller
-One Flew Over the Cuckoo's Nest (1975) : drama
-Godfather: Part II, The (1974) : crime drama
-Lawrence of Arabia (1962) : adventure drama war
+Showing recommendations for users: 476  
+===========================  
+Movies with high ratings from user  
+--------------------------------  
+Forrest Gump (1994) : comedy drama romance war  
+Shawshank Redemption, The (1994) : crime drama  
+Beauty and the Beast (1991) : animation children fantasy musical romance imax  
+Little Women (1994) : drama  
+Terminator 2: Judgment Day (1991) : action sci_fi  
+--------------------------------  
+Top 10 Film Recommendation  
+--------------------------------  
+Usual Suspects, The (1995) : crime mystery thriller  
+Star Wars: Episode V - The Empire Strikes Back (1980) : action adventure sci_fi  
+Apocalypse Now (1979) : action drama war  
+Goodfellas (1990) : crime drama  
+Fight Club (1999) : action crime drama thriller  
+Rear Window (1954) : mystery thriller  
+North by Northwest (1959) : action adventure mystery romance thriller  
+One Flew Over the Cuckoo's Nest (1975) : drama  
+Godfather: Part II, The (1974) : crime drama  
+Lawrence of Arabia (1962) : adventure drama war  
 
 ### Kelebihan Model:
 - Menangkap pola dari komunitas, rekomendasi didasarkan pada kesamaan antar pengguna atau pola rating.
