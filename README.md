@@ -240,11 +240,11 @@ Model yang digunakan:
 #### Prediksi
 | No | Movie Title                                             | Genres                  | 
 |----|---------------------------------------------------------|-------------------------|
-| 1  | Tale of Princess Kaguya, The (Kaguyahime no monogatari) | animation drama fantasy |
-| 2  | Waking Life (2001)                              	       | animation drama fantasy |
-| 3  | Belladonna of Sadness (1973)                            | animation drama fantasy |
-| 4  | Idiots and Angels (2008)                                | animation drama fantasy |
-| 5  | Angel's Egg (Tenshi no tamago) (1985)                   | animation drama fantasy |
+| 1  | Waking Life (2001)				       | animation drama fantasy |
+| 2  | Tale of Princess Kaguya, The (Kaguyahime no monogatari) | animation drama fantasy |
+| 3  | Idiots and Angels (2008)                                | animation drama fantasy |
+| 4  | The Bremen Town Musicians (1969)                        | animation drama fantasy |
+| 5  | Belladonna of Sadness (1973)                   	       | animation drama fantasy |
 
     
 ### Kelebihan Model:
