@@ -396,8 +396,16 @@ Rekomendasi yang diberikan untuk film "Your Name. (2016)" menunjukkan film-film 
 
 2. Precision & Recall
 
+Rumus Metrik:
+$$Precision = jumlah film relevan yang berhasil direkomendasikan / total jumlah film yang direkomendasikan$$
+$$Recall = jumlah film relevan yang berhasil direkomendasikan / total jumlah film yang disukai pengguna$$
 
-3. RMSE: Root Mean Squared Error
+`Precision` digunakan untuk mengukur jumlah film yang benar-benar relevan untuk pengguna. Dalam konteks ini, dari setiap 5 film yang direkomendasikan, rata-rata hanya sekitar 4.24% yang sesuai dengan preferensi pengguna. 
+`Recall` digunakan untuk mengukur berapa banyak yang berhasil ditangkap oleh sistem dalam top-K rekomendasi untuk suatu pengguna. Dengan nilai recall sebesar 0.28%, dapat disimpulkan bahwa sistem hanya mampu menjangkau sebagian sangat kecil dari keseluruhan film yang disukai pengguna.
+
+Hasil evaluasi menunjukkan bahwa meskipun sistem dapat mengidentifikasi sejumlah kecil film yang relevan (precision), namun sebagian besar preferensi pengguna tetap tidak terjangkau oleh rekomendasi sistem (recall), menandakan bahwa pendekatan Content-Based Filtering berbasis genre yang digunakan lebih efektif untuk menemukan film yang mirip secara konten, namun kurang optimal dalam membangun rekomendasi yang komprehensif terhadap selera pengguna secara keseluruhan.
+
+4. RMSE: Root Mean Squared Error
 
 Rumus Metrik:
 $$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }$$  
