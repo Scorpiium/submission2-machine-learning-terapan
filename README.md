@@ -400,8 +400,7 @@ Rumus Metrik:
 - $$\text{Precision@K} = \frac{\text{Jumlah film relevan yang berhasil direkomendasikan}}{\text{Total jumlah film yang direkomendasikan}}$$  
 - $$\text{Recall@K} = \frac{\text{Jumlah film relevan yang berhasil direkomendasikan}}{\text{Total jumlah film relevan (ground truth)}}$$  
 
-`Precision` digunakan untuk mengukur jumlah film yang benar-benar relevan untuk pengguna. Dalam konteks ini, dari setiap 5 film yang direkomendasikan, rata-rata hanya sekitar 4.24% yang sesuai dengan preferensi pengguna. 
-`Recall` digunakan untuk mengukur berapa banyak yang berhasil ditangkap oleh sistem dalam top-K rekomendasi untuk suatu pengguna. Dengan nilai recall sebesar 0.28%, dapat disimpulkan bahwa sistem hanya mampu menjangkau sebagian sangat kecil dari keseluruhan film yang disukai pengguna.
+`Precision` digunakan untuk mengukur jumlah film yang benar-benar relevan untuk pengguna. Dalam konteks ini, dari setiap `5`/*K* film yang direkomendasikan, rata-rata hanya sekitar `4.24%` yang sesuai dengan preferensi pengguna. `Recall` digunakan untuk mengukur berapa banyak yang berhasil ditangkap oleh sistem dalam top-K rekomendasi untuk suatu pengguna. Dengan nilai recall sebesar `0.28%`, dapat disimpulkan bahwa sistem hanya mampu menjangkau sebagian sangat kecil dari keseluruhan film yang disukai pengguna.
 
 Hasil evaluasi menunjukkan bahwa meskipun sistem dapat mengidentifikasi sejumlah kecil film yang relevan (precision), namun sebagian besar preferensi pengguna tetap tidak terjangkau oleh rekomendasi sistem (recall), menandakan bahwa pendekatan Content-Based Filtering berbasis genre yang digunakan lebih efektif untuk menemukan film yang mirip secara konten, namun kurang optimal dalam membangun rekomendasi yang komprehensif terhadap selera pengguna secara keseluruhan.
 
