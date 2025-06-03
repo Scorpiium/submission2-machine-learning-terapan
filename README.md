@@ -406,7 +406,7 @@ Hasil evaluasi menunjukkan bahwa meskipun sistem dapat mengidentifikasi sejumlah
 
 3. RMSE: Root Mean Squared Error
 
-Rumus Metrik:
+Rumus Metrik:  
 $$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }$$  
     - $$y_i$$ = Nilai Aktual  
     - $$\hat{y}_i$$ = Nilai Prediksi  
