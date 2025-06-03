@@ -69,7 +69,7 @@ Dilakukan setelah join dataset `movies` dan `ratings`. Dari 100836 baris dan 6 k
 	![rating](images/eda_rating.png)  
 	Berdasarkan persebaran plot rating film dalam dataset `ratings`. Sebagian besar rating berada diantara `3.0` dan `4.0`, dengan rating `5.0` setelahnya. Hal ini menunjukkan pengguna yang cenderung memiliki opini positif terhadap film yang mereka tonton.
 
-### Data Preparation
+## Data Preparation
 Tahapan yang dilakukan:
 1.  Content-Based Filtering
 - Penggabungan Dataframe
@@ -78,7 +78,7 @@ all_movies_name = pd.merge(ratings, movies, on='movieId', how='left')
 ```
 Preprocessing data dilakukan sebagai persiapan TF-IDF vectoring, dimana dapat menghasilkan dataframe `all_movies_name` yang lebih lengkap dan fleksibel untuk preparation berikutnya.
 
--  Membersihkan Dataframe
+- Membersihkan Dataframe
 ```
 all_movies_name = all_movies_name[all_movies_name['genres'] != '(no genres listed)']
 ```
@@ -89,6 +89,37 @@ Dalam pengecekan, ditemukan beberapa judul yang tidak memiliki masukan genre, se
 Selain itu, genre adalah fitur penting dalam sistem rekomendasi, digunakan sebagai fitur utama dalam model berbasis konten seperti TF-IDF vectorization. Data tanpa genre berarti tidak bisa diwakili dalam ruang fitur, dan akan menyebabkan masalah dalam vektorisasi atau prediksi model.
 
 Setelah proses penghapusan, terjadi pengurangan baris dalam dataframe `all_movies_name` dari 100836 menjadi 100789 atau pengurangan sebesar <1%.
+
+- TF-IDF Vectoring
+	```
+	from sklearn.feature_extraction.text import TfidfVectorizer
+ 
+    tfidf_vectorizer = TfidfVectorizer()
+    tfidf_vectorizer.fit(data['genres']) 
+ 
+    tfidf_vectorizer.get_feature_names_out()
+    
+    tfidf_matrix = tfidf_vectorizer.fit_transform(data['genres']) 
+    tfidf_matrix.shape
+	```
+	 Melakukan transformasi teks genre menjadi representasi numerik menggunakan TF-IDF (Term Frequency-Inverse Document Frequency).
+    - Vektor TF-IDF berhasil menangkap 19 genre unik dari data teks yang telah diproses (processed_genres).
+        - Genre seperti `sci-fi` dan `film-noir` sebelumnya telah ditransformasikan menjadi `sci_fi` dan `film_noir` agar tidak terpecah saat tokenisasi.
+    - Matriks TF-IDF memiliki 9690 baris (film) dan 19 kolom (genre).
+        - Setiap baris merepresentasikan sebuah film, dan setiap kolom menyatakan nilai bobot TF-IDF dari sebuah genre untuk film tersebut.
+    - Jumlah film (9690) adalah hasil akhir setelah proses penghapusan film dengan genre (no genres listed) yang dilakukan sebelumnya. Film tanpa genre tidak dapat direpresentasikan secara akurat dalam sistem rekomendasi berbasis konten, sehingga dihapus dari data pelatihan.
+    - Dari total awal 9742 film, hanya 9690 yang memiliki genre yang valid, dan digunakan untuk membentuk representasi vektor TF-IDF.
+	
+    ```
+    tfidf_matrix.todense()
+    
+    pd.DataFrame(
+        tfidf_matrix.todense(), 
+        columns=tfidf_vectorizer.get_feature_names_out(),
+        index=data.movie_title
+    ).sample(19, axis=1).sample(10, axis=0)
+    ```
+    Berdasarkan hasil vektor matriks TF-IDF, menghasilkan hubungan `movie_title` dengan `genres` dalam range [0,1]. Semakin mendekati nilai dengan 1, maka semakin kuat korelasinya.
 
 - Normalisasi Teks
 ```
@@ -158,36 +189,6 @@ Membagi dataset dibagi menjadi dua bagian: 80% untuk pelatihan (x_train, y_train
 ## Modeling and Results
 Model yang digunakan:
 1. Content-Based Filtering :
-	```
-	from sklearn.feature_extraction.text import TfidfVectorizer
- 
-    tfidf_vectorizer = TfidfVectorizer()
-    tfidf_vectorizer.fit(data['genres']) 
- 
-    tfidf_vectorizer.get_feature_names_out()
-    
-    tfidf_matrix = tfidf_vectorizer.fit_transform(data['genres']) 
-    tfidf_matrix.shape
-	```
-	 Melakukan transformasi teks genre menjadi representasi numerik menggunakan TF-IDF (Term Frequency-Inverse Document Frequency).
-    - Vektor TF-IDF berhasil menangkap 19 genre unik dari data teks yang telah diproses (processed_genres).
-        - Genre seperti `sci-fi` dan `film-noir` sebelumnya telah ditransformasikan menjadi `sci_fi` dan `film_noir` agar tidak terpecah saat tokenisasi.
-    - Matriks TF-IDF memiliki 9690 baris (film) dan 19 kolom (genre).
-        - Setiap baris merepresentasikan sebuah film, dan setiap kolom menyatakan nilai bobot TF-IDF dari sebuah genre untuk film tersebut.
-    - Jumlah film (9690) adalah hasil akhir setelah proses penghapusan film dengan genre (no genres listed) yang dilakukan sebelumnya. Film tanpa genre tidak dapat direpresentasikan secara akurat dalam sistem rekomendasi berbasis konten, sehingga dihapus dari data pelatihan.
-    - Dari total awal 9742 film, hanya 9690 yang memiliki genre yang valid, dan digunakan untuk membentuk representasi vektor TF-IDF.
-	
-    ```
-    tfidf_matrix.todense()
-    
-    pd.DataFrame(
-        tfidf_matrix.todense(), 
-        columns=tfidf_vectorizer.get_feature_names_out(),
-        index=data.movie_title
-    ).sample(19, axis=1).sample(10, axis=0)
-    ```
-    Berdasarkan hasil vektor matriks TF-IDF, menghasilkan hubungan `movie_title` dengan `genres` dalam range [0,1]. Semakin mendekati nilai dengan 1, maka semakin kuat korelasinya.
-
     ```
     cosine_sim = cosine_similarity(tfidf_matrix)
     
