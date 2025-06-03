@@ -471,8 +471,8 @@ $$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }$$
     - $$n$$ = Jumlah Data  
 
 Hasil Evaluasi:
-- `0.1976` pada data training.
-- `0.2024` pada data validasi.
+- `0.1965` pada data training.
+- `0.2041` pada data validasi.
 
 Model `Collaborative Filtering` telah menunjukkan kinerja baik dan stabil, dengan nilai RMSE rendah untuk data training dan validasi. Ini berarti model cukup akurat dalam merekomendasikan film berdasarkan pola rating pengguna sebelumnya.
 
