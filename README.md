@@ -454,12 +454,12 @@ evaluate_cbf_model(
     n_users=100
 )
 ```
-- Mengambil n_users secara acak dari dataset.
+- Mengambil `n_users`/*100* secara acak dari dataset.
 - Untuk setiap user:
-  - Filter film yang ia beri rating ≥ 3.5 sebagai item relevan.
+  - Filter film yang diberi rating `≥3.5` sebagai item relevan.
   - Memilih salah satu film relevan sebagai input (seed).
   - Mengambil rekomendasi mirip (top-K) berdasarkan seed tersebut.
-  - Hitung Precision@K dan Recall@K antara rekomendasi dan seluruh film relevan user.
+  - Hitung `Precision@K` dan `Recall@K` antara rekomendasi dan seluruh film relevan user.
 - Menyimpan nilai precision dan recall ke dalam list.
 - Menghitung rata-rata precision dan recall dari semua pengguna.
 
