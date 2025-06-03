@@ -90,6 +90,34 @@ Selain itu, genre adalah fitur penting dalam sistem rekomendasi, digunakan sebag
 
 Setelah proses penghapusan, terjadi pengurangan baris dalam dataframe `all_movies_name` dari 100836 menjadi 100789 atau pengurangan sebesar <1%.
 
+- Normalisasi Teks
+```
+all_movies_name['processed_genres'] = (
+    all_movies_name['genres']
+    .str.replace(r'\|', ' ', regex=True)
+    .str.replace('-', '_', regex=True)
+    .str.lower()
+)
+```
+Normalisasi teks dilakukan untuk mempersiapkan data genre agar dapat digunakan dalam proses vektorisasi seperti **TF-IDF**, yang memerlukan input dalam bentuk teks bersih dan konsisten.
+
+- `.str.replace(r'\|', ' ', regex=True)`: Mengganti pemisah antar genre dari '|' menjadi spasi.
+- `.str.replace('-', '_', regex=True)`: Mengganti pemisah dalam genre dari '-' menjadi underscore '_', mencegah genre majemuk seperti 'Sci-Fi' atau 'Film-Noir' terpecah menjadi dua kata saat tokenisasi.
+
+- Menghapus Nilai Duplikat
+```
+preparation_tfidf = all_movies_name.drop_duplicates('movieId')
+```
+Sistem rekomendasi berbasis konten seperti TF-IDF hanya memerlukan satu representasi unik untuk setiap item (dalam hal ini, film). Namun, dataset `all_movies_name` yang merupakan hasil penggabungan antara `ratings` dan `movies` bersifat redundan, karena satu film bisa muncul berkali-kali (setiap kali di-rating oleh pengguna berbeda).
+
+- Ekstraksi Fitur dan Metadata
+```
+movie_id = preparation_tfidf['movieId'].tolist()
+movie_title = preparation_tfidf['title'].tolist()
+movie_genre = preparation_tfidf['processed_genres'].tolist()
+```
+Esktraksi fitur dilakukan untuk mengambil data penting dari DataFrame `preparation_tfidf` dan mengubahnya menjadi list Python agar dapat digunakan dalam proses vektorisasi dan pemodelan.
+
 - TF-IDF Vectoring
 	```
 	from sklearn.feature_extraction.text import TfidfVectorizer
@@ -120,34 +148,6 @@ Setelah proses penghapusan, terjadi pengurangan baris dalam dataframe `all_movie
     ).sample(19, axis=1).sample(10, axis=0)
     ```
     Berdasarkan hasil vektor matriks TF-IDF, menghasilkan hubungan `movie_title` dengan `genres` dalam range [0,1]. Semakin mendekati nilai dengan 1, maka semakin kuat korelasinya.
-
-- Normalisasi Teks
-```
-all_movies_name['processed_genres'] = (
-    all_movies_name['genres']
-    .str.replace(r'\|', ' ', regex=True)
-    .str.replace('-', '_', regex=True)
-    .str.lower()
-)
-```
-Normalisasi teks dilakukan untuk mempersiapkan data genre agar dapat digunakan dalam proses vektorisasi seperti **TF-IDF**, yang memerlukan input dalam bentuk teks bersih dan konsisten.
-
-- `.str.replace(r'\|', ' ', regex=True)`: Mengganti pemisah antar genre dari '|' menjadi spasi.
-- `.str.replace('-', '_', regex=True)`: Mengganti pemisah dalam genre dari '-' menjadi underscore '_', mencegah genre majemuk seperti 'Sci-Fi' atau 'Film-Noir' terpecah menjadi dua kata saat tokenisasi.
-
-- Menghapus Nilai Duplikat
-```
-preparation_tfidf = all_movies_name.drop_duplicates('movieId')
-```
-Sistem rekomendasi berbasis konten seperti TF-IDF hanya memerlukan satu representasi unik untuk setiap item (dalam hal ini, film). Namun, dataset `all_movies_name` yang merupakan hasil penggabungan antara `ratings` dan `movies` bersifat redundan, karena satu film bisa muncul berkali-kali (setiap kali di-rating oleh pengguna berbeda).
-
-- Ekstraksi Fitur dan Metadata
-```
-movie_id = preparation_tfidf['movieId'].tolist()
-movie_title = preparation_tfidf['title'].tolist()
-movie_genre = preparation_tfidf['processed_genres'].tolist()
-```
-Esktraksi fitur dilakukan untuk mengambil data penting dari DataFrame `preparation_tfidf` dan mengubahnya menjadi list Python agar dapat digunakan dalam proses vektorisasi dan pemodelan.
 
 2. Collaborative Filtering
 - Encoding ID
