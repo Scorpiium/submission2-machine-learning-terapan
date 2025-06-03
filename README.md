@@ -390,9 +390,11 @@ Showing recommendations for users: 438
 
 ## Evaluasi Model
 Metrik yang digunakan:  
-1. Relevansi Rekomendasi  
-Untuk model `Content-Based Filtering`, evaluasi dilakukan secara kualitatif dengan melihat relevansi rekomendasi:
-Rekomendasi yang diberikan untuk film "Your Name. (2016)" menunjukkan film-film yang memiliki genre serupa, `animation`, `drama`, dan `fantasy`, menunjukkan model dapat memberikan rekomendasi film yang cukup akurat.
+1. Relevansi Rekomendasi
+Evaluasi ini dilakukan dengan mengamati langsung relevansi dan kesesuaian film-film yang direkomendasikan, baik terhadap film input (untuk Content-Based Filtering), maupun terhadap histori pengguna (untuk Collaborative Filtering). Evaluasi ini bermanfaat untuk menilai apakah rekomendasi masuk akal secara semantik (misalnya genre, tema, suasana) dan mengidentifikasi kecocokan kontekstual, misalnya merekomendasikan film klasik untuk penonton film klasik meskipun genre berbeda.
+
+- Untuk model `Content-Based Filtering`, rekomendasi yang diberikan untuk film "Your Name. (2016)" menunjukkan film-film yang memiliki genre serupa, `animation`, `drama`, dan `fantasy`, menunjukkan model dapat memberikan rekomendasi film yang cukup akurat.
+- Unutk model `Collaborative Filtering`, rekomendasi yang diberikan untuk pengguna dengan histori rating tinggi untuk film seperti "Heat (1995)", "Star Wars: Episode IV - A New Hope (1977)", dan "The Shawshank Redemption (1994)" menunjukkan bahwa sistem merekomendasikan film-film yang memiliki tema atau gaya naratif serupa, seperti "The Usual Suspects (1995)", "Chinatown (1974)", dan "Rear Window (1954)" yang juga mengandung unsur `crime`, `thriller`, dan `mystery`, menunjukkan bahwa model dapat menangkap pola preferensi pengguna dan memberikan rekomendasi yang relevan berdasarkan pola perilaku pengguna lain dengan selera serupa.
 
 2. Precision & Recall
 
