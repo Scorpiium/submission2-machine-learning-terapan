@@ -172,6 +172,18 @@ y = df['rating'].apply(lambda x: (x - min_rating) / (max_rating - min_rating)).v
 ```
 `rating` dinormalisasi ke rentang 0–1 menggunakan rumus min-max scaling agar lebih stabil saat pelatihan model (y). 
 
+- Menghapus Kolom yang Tidak Digunakan
+```
+df = df.drop(columns=['timestamp'])
+```
+Menghapus kolom `timestamp` karena tidak berkontribusi dalam proses rekomendasi berbasis rating.
+
+- Data Shuffling
+```
+df = df.sample(frac=1, random_state=42)
+```
+Melakukan pengacakan data dengan `sample(frac=1)` untuk memastikan distribusi data lebih merata dan menghindari bias urutan saat pelatihan model. Pengacakan dilakukan secara konsisten menggunakan `random_state=42`.
+
 - Data Splitting
 ```
 train_indices = int(0.8 * df.shape[0])
