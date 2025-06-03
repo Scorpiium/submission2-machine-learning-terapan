@@ -309,12 +309,11 @@ Model yang digunakan:
         metrics=[tf.keras.metrics.RootMeanSquaredError()]
     )
     ```
-    
     Model dikompilasi menggunakan:
     - Fungsi loss `Binary Crossentropy` karena rating telah disesuaikan ke rentang [0, 1],
     - Optimizer `Adam` untuk efisiensi pembelajaran,
     - Metrik evaluasi `Root Mean Squared Error` (RMSE) yang umum digunakan pada sistem rekomendasi.
-    
+   
     ```
     history = model.fit(
         x = x_train,
