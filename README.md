@@ -309,6 +309,7 @@ Model yang digunakan:
         metrics=[tf.keras.metrics.RootMeanSquaredError()]
     )
     ```
+    
     Model dikompilasi menggunakan:
     - Fungsi loss `Binary Crossentropy` karena rating telah disesuaikan ke rentang [0, 1],
     - Optimizer `Adam` untuk efisiensi pembelajaran,
