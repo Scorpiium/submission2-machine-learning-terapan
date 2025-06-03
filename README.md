@@ -389,16 +389,16 @@ Showing recommendations for users: 438
 - Hasil yang lebih sulit untuk ditelusuri alasannya, dikarenakan menggunakan pola interaksi pengguna lain, tanpa memperhatikan karakteristik atau atribut eksplisit dari item .
 
 ## Evaluasi Model
-Metrik yang digunakan:
-1. Relevansi Rekomendasi
+Metrik yang digunakan:  
+1. Relevansi Rekomendasi  
 Untuk model `Content-Based Filtering`, evaluasi dilakukan secara kualitatif dengan melihat relevansi rekomendasi:
 Rekomendasi yang diberikan untuk film "Your Name. (2016)" menunjukkan film-film yang memiliki genre serupa, `animation`, `drama`, dan `fantasy`, menunjukkan model dapat memberikan rekomendasi film yang cukup akurat.
 
 2. Precision & Recall
 
-Rumus Metrik:
-$$Precision = jumlah film relevan yang berhasil direkomendasikan / total jumlah film yang direkomendasikan$$
-$$Recall = jumlah film relevan yang berhasil direkomendasikan / total jumlah film yang disukai pengguna$$
+Rumus Metrik:  
+- $$\text{Precision@K} = \frac{\text{Jumlah film relevan yang berhasil direkomendasikan}}{\text{Total jumlah film yang direkomendasikan}}$$  
+- $$\text{Recall@K} = \frac{\text{Jumlah film relevan yang berhasil direkomendasikan}}{\text{Total jumlah film relevan (ground truth)}}$$  
 
 `Precision` digunakan untuk mengukur jumlah film yang benar-benar relevan untuk pengguna. Dalam konteks ini, dari setiap 5 film yang direkomendasikan, rata-rata hanya sekitar 4.24% yang sesuai dengan preferensi pengguna. 
 `Recall` digunakan untuk mengukur berapa banyak yang berhasil ditangkap oleh sistem dalam top-K rekomendasi untuk suatu pengguna. Dengan nilai recall sebesar 0.28%, dapat disimpulkan bahwa sistem hanya mampu menjangkau sebagian sangat kecil dari keseluruhan film yang disukai pengguna.
