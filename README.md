@@ -172,6 +172,12 @@ y = df['rating'].apply(lambda x: (x - min_rating) / (max_rating - min_rating)).v
 ```
 `rating` dinormalisasi ke rentang 0–1 menggunakan rumus min-max scaling agar lebih stabil saat pelatihan model (y). 
 
+- Transformasi Tipe Data Rating untuk Kompatibilitas Model
+```
+df['rating'] = df['rating'].values.astype(np.float32)
+```
+Rating dikonversi ke tipe `float32`, dilakukan untuk kompabilitas dengan TensorFlow/Keras, serta mengurangi penggunaan memori.
+
 - Menghapus Kolom yang Tidak Digunakan
 ```
 df = df.drop(columns=['timestamp'])
